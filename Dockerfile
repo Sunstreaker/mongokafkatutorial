@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 
+RUN  apt-get update
 RUN apt-get -y update
 
 RUN apt-get -y upgrade
@@ -14,8 +15,8 @@ RUN echo "**** installing MongoDB Python Driver ****" && \
     \
     pip3 install --no-cache-dir -r requirements.txt && \
      echo "**** installing MongoDB Shell ****" && \
-    curl https://downloads.mongodb.com/compass/mongodb-mongosh_1.3.1_arm64.deb -o mongosh.deb && \
-    dpkg --install mongosh.deb
+    curl https://downloads.mongodb.com/compass/mongodb-mongosh_1.5.4_amd64.deb -o mongosh.deb && \
+    dpkg  --install mongosh.deb
 
 WORKDIR /root
 # COPY ../../tutorials/ ./
